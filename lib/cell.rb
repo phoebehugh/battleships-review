@@ -8,6 +8,7 @@ class Cell
 
   def hit
     raise('Cell has already been hit!') if hit?
+    content.hit
     @hit = true
   end
 

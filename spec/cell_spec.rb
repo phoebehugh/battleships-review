@@ -9,15 +9,27 @@ describe Cell do
     cell.content = ship
     expect(cell.content).to eq ship
   end
+  
+  context 'cell with content' do
+    before do 
+      cell.content = ship
+      allow(ship).to receive :hit
+    end
 
-  it 'can be hit' do
-    cell.hit
-    expect(cell).to be_hit
-  end
+    it 'can be hit' do
+      cell.hit
+      expect(cell).to be_hit
+    end
 
-  it 'throws an error when you try to hit it twice' do
-    cell.hit
-    expect{cell.hit}.to raise_error('Cell has already been hit!')
+    it 'throws an error when you try to hit it twice' do
+      cell.hit
+      expect{cell.hit}.to raise_error('Cell has already been hit!')
+    end
+
+    it 'hits whatever is in the content' do
+      expect(ship).to receive(:hit)
+      cell.hit
+    end
   end
 
 end
