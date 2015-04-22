@@ -1,5 +1,5 @@
 class Water
-
+  
   def initialize
     @hit = false
   end
