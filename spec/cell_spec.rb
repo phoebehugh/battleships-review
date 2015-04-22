@@ -9,4 +9,10 @@ describe Cell do
     cell.content = ship
     expect(cell.content).to eq ship
   end
+
+  it 'can be hit' do
+    cell.hit
+    expect(cell).to be_hit
+  end
+
 end
