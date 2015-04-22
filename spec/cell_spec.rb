@@ -15,4 +15,9 @@ describe Cell do
     expect(cell).to be_hit
   end
 
+  it 'throws an error when you try to hit it twice' do
+    cell.hit
+    expect{cell.hit}.to raise_error('Cell has already been hit!')
+  end
+
 end

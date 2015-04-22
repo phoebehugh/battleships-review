@@ -7,6 +7,7 @@ class Cell
   end
 
   def hit
+    raise('Cell has already been hit!') if hit?
     @hit = true
   end
 
