@@ -26,7 +26,15 @@ class Board
   end
 
   def place ship, coordinate
-    grid[coordinate].content= ship 
+    coordinates_for(ship.size, coordinate).each do |coordinate|
+      grid[coordinate].content= ship 
+    end
+  end
+
+  def coordinates_for size, coordinate
+    coordinate = [coordinate]
+    (size - 1).times {coordinate << coordinate.last.next}
+    coordinate
   end
 
 end
