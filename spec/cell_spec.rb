@@ -13,7 +13,7 @@ describe Cell do
   context 'cell with content' do
     before do 
       cell.content = ship
-      allow(ship).to receive :hit
+      allow(ship).to receive(:hit)
     end
 
     it 'can be hit' do
