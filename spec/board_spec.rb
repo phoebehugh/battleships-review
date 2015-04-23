@@ -3,7 +3,7 @@ require 'cell'
 
 describe Board do
   
-  let(:board){Board.new({size: 100, cell: Cell.new})}
+  let(:board){Board.new({size: 100, cell: Cell})}
 
   it 'has a size of 100 when created' do
     expect(board.grid.count).to eq 100

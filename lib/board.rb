@@ -8,7 +8,7 @@ class Board
     cell = options[:cell]
     @grid = {}
     letter_range_based_on_size(size).map do |letter| 
-      (1..dimension_size(size)).map{|number| @grid["#{letter}#{number}".to_sym] = cell}
+      (1..dimension_size(size)).map{|number| @grid["#{letter}#{number}".to_sym] = cell.new}
     end
 
     p grid
