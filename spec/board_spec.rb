@@ -1,8 +1,9 @@
 require 'board'
-require 'cell'
 
 describe Board do
   
+  let(:cell){double :cell}
+  let(:cell_class){double :cell_class, :new => cell}  
   let(:board){Board.new({size: 100, cell: Cell})}
 
   it 'has a size of 100 when created' do
